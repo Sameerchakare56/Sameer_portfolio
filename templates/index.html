@@ -1,0 +1,366 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ name }} — AI Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-brand">SC<span>.</span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-year">{{ name }} · Portfolio 2025</div>
+    <div class="hero-name-block">
+      <span class="hero-first">Sameer</span>
+      <span class="hero-last">Chakravedi</span>
+      <div class="hero-divider"></div>
+      <p class="hero-tagline">Building intelligent systems — from dataset to deployment. Computer vision, machine learning, and AI backends.</p>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="{{ github }}" target="_blank" class="btn btn-outline">GitHub ↗</a>
+      <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" download="Sameer_Chakravedi_Resume.pdf" class="btn btn-resume">↓ Resume</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-issue">Indore, Madhya Pradesh · B.Tech AI · 2023–2027</div>
+    <div class="hero-role-block">
+      <div class="hero-role-label">Specialised in</div>
+      <ul class="hero-roles">
+        <li>Computer Vision</li>
+        <li>Machine Learning</li>
+        <li>AI Backends</li>
+        <li>Data Analysis</li>
+      </ul>
+    </div>
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <span class="hero-stat-num">16+</span>
+        <span class="hero-stat-label">GitHub Repos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5+</span>
+        <span class="hero-stat-label">Projects Built</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">4mo</span>
+        <span class="hero-stat-label">Experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">01</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">About Me</span>
+        <h2 class="section-title">The person<br/>behind the code.</h2>
+      </div>
+    </div>
+    <div class="about-layout">
+      <div class="about-left reveal">
+        <p>{{ about }}</p>
+        <div class="about-pullquote">"Learn by building. Build to learn."</div>
+        <p>Currently exploring Generative AI, fine-tuning LLMs, and MLOps pipelines. Open to internships, collaborations, and interesting problems.</p>
+      </div>
+      <div class="about-divider"></div>
+      <div class="about-right reveal">
+        <div class="about-card">
+          <div class="card-label">Identity Card</div>
+          <div class="card-avatar-box">SC</div>
+          <div class="card-name">{{ name }}</div>
+          <span class="card-role-tag">AI Developer</span>
+          <div class="card-location">📍 {{ location }}</div>
+          <div class="card-links">
+            <a href="mailto:{{ email }}" class="card-link">{{ email }}</a>
+            <a href="{{ linkedin }}" target="_blank" class="card-link">LinkedIn Profile</a>
+            <a href="{{ github }}" target="_blank" class="card-link">GitHub Profile</a>
+            <a href="tel:{{ phone }}" class="card-link">{{ phone }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-dark" id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num" style="color:#e8350a;opacity:0.35;">02</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Technical Skills</span>
+        <h2 class="section-title">Tools of the<br/><em style="font-style:italic;color:#e8350a;">trade.</em></h2>
+      </div>
+    </div>
+    <div class="skills-layout reveal">
+      {% for skill_group in skills %}
+      <div class="skill-block">
+        <div class="skill-block-num">0{{ forloop.counter }}</div>
+        <div class="skill-block-cat">{{ skill_group.category }}</div>
+        <ul class="skill-list">
+          {% for item in skill_group.items %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section section-alt" id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">03</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Work Experience</span>
+        <h2 class="section-title">Where I've<br/>shipped real work.</h2>
+      </div>
+    </div>
+    <div class="exp-layout">
+      {% for exp in experience %}
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <span class="exp-duration">{{ exp.duration }}</span>
+          <div class="exp-company">{{ exp.company }}</div>
+          <div class="exp-type">Internship</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">{{ exp.role }}</div>
+          <ul class="exp-points">
+            {% for point in exp.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+          <div class="exp-tech">
+            {% for t in exp.tech %}
+            <span class="tech-pill">{{ t }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">04</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Projects</span>
+        <h2 class="section-title">Things I've<br/>actually built.</h2>
+      </div>
+    </div>
+    <div class="projects-layout">
+      {% for project in projects %}
+      <div class="project-card reveal">
+        <div class="project-index">{{ forloop.counter }}</div>
+        <div class="project-cat">Python · AI / ML</div>
+        <h3 class="project-name">{{ project.name }}</h3>
+        <p class="project-desc">{{ project.desc }}</p>
+        <div class="project-tech">
+          {% for t in project.tech %}
+          <span class="tech-pill">{{ t }}</span>
+          {% endfor %}
+        </div>
+        <a href="{{ project.github }}" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section section-alt" id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">05</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Education</span>
+        <h2 class="section-title">The foundation<br/>of everything.</h2>
+      </div>
+    </div>
+    <div class="edu-layout">
+      {% for edu in education %}
+      <div class="edu-card reveal">
+        <div class="edu-card-num">0{{ forloop.counter }}</div>
+        <div class="edu-year-badge">{{ edu.year }}</div>
+        <div class="edu-degree">{{ edu.degree }}</div>
+        <div class="edu-school">{{ edu.school }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- RESUME SECTION -->
+<section class="section resume-section" id="resume">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">06</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Resume</span>
+        <h2 class="section-title">My full<br/>credentials.</h2>
+      </div>
+    </div>
+
+    <div class="resume-layout reveal">
+      <div class="resume-highlights">
+        <div class="resume-highlight-item">
+          <div class="rh-icon">🎓</div>
+          <div>
+            <div class="rh-label">Education</div>
+            <div class="rh-value">B.Tech in Artificial Intelligence<br/><span>SAGE University · 2023–2027</span></div>
+          </div>
+        </div>
+        <div class="resume-highlight-item">
+          <div class="rh-icon">💼</div>
+          <div>
+            <div class="rh-label">Experience</div>
+            <div class="rh-value">Python Support Intern<br/><span>TDBAI · Sep–Dec 2025</span></div>
+          </div>
+        </div>
+        <div class="resume-highlight-item">
+          <div class="rh-icon">🛠️</div>
+          <div>
+            <div class="rh-label">Core Stack</div>
+            <div class="rh-value">Python · YOLOv8 · FastAPI<br/><span>OpenCV · Scikit-learn · Django</span></div>
+          </div>
+        </div>
+        <div class="resume-highlight-item">
+          <div class="rh-icon">📍</div>
+          <div>
+            <div class="rh-label">Location</div>
+            <div class="rh-value">Indore, Madhya Pradesh<br/><span>Open to remote &amp; relocation</span></div>
+          </div>
+        </div>
+
+        <div class="resume-cta-group">
+          <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" download="Sameer_Chakravedi_Resume.pdf" class="resume-btn resume-btn-download">
+            <span class="resume-btn-icon">↓</span>
+            Download PDF
+          </a>
+          <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" target="_blank" class="resume-btn resume-btn-view">
+            <span class="resume-btn-icon">↗</span>
+            View in Browser
+          </a>
+        </div>
+      </div>
+
+      <div class="resume-preview-wrap">
+        <div class="resume-preview-label">
+          <span class="rp-dot"></span> Live Preview
+        </div>
+        <div class="resume-embed-box">
+          <iframe
+            src="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}#toolbar=0&navpanes=0&scrollbar=0"
+            class="resume-iframe"
+            title="Sameer Chakravedi Resume">
+          </iframe>
+          <div class="resume-embed-overlay">
+            <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" target="_blank" class="resume-open-link">
+              Open Full Screen ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num" style="color:#e8350a;opacity:0.35;">07</div>
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title" style="color:#f5f0e8;">Let's work<br/>together.</h2>
+      </div>
+    </div>
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="contact-headline">Open to<br/>new ideas.</div>
+        <p class="contact-subtext">I'm always up for a good challenge — internships, open-source collabs, or building something cool from scratch. Reach out.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:{{ email }}" class="contact-item">
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">{{ email }}</div>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="{{ linkedin }}" target="_blank" class="contact-item">
+          <div>
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-value">sameerchakravedi</div>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="{{ github }}" target="_blank" class="contact-item">
+          <div>
+            <div class="contact-item-label">GitHub</div>
+            <div class="contact-item-value">Sameerchakare56</div>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="tel:{{ phone }}" class="contact-item">
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">{{ phone }}</div>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">SC<span>.</span></div>
+    <div class="footer-copy">© 2025 Sameer Chakravedi · All rights reserved</div>
+    <div class="footer-top"><a href="#hero">↑ Back to top</a></div>
+  </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
