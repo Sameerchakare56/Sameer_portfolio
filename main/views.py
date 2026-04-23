@@ -15,7 +15,7 @@ def index(request):
             {'category': 'ML & AI', 'items': ['Scikit-learn', 'YOLOv8', 'OpenCV', 'Roboflow']},
             {'category': 'Data Analysis', 'items': ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn']},
             {'category': 'Web & APIs', 'items': ['Django', 'FastAPI', 'HTML5', 'CSS3']},
-            {'category': 'Tools', 'items': ['Git', 'GitHub', 'Jupyter', 'VS Code', 'PyCharm']},
+            {'category': 'Tools', 'items': ['Git', 'GitHub', 'Jupyter', 'VS Code']},
         ],
         'experience': [
             {
@@ -40,10 +40,10 @@ def index(request):
                 'github': 'https://github.com/Sameerchakare56/movie_recommendation_website',
             },
             {
-                'name': 'Voice Command System',
-                'desc': 'A voice-controlled command system that interprets spoken commands and executes corresponding actions.',
-                'tech': ['Python', 'Speech Recognition'],
-                'github': 'https://github.com/Sameerchakare56/voice-command-system',
+                'name': 'Portfolio Analysis: Value at Risk',
+                'desc': 'This project is a Financial Risk Management tool that calculates Value at Risk (VaR)—a metric used to estimate the maximum potential loss of an investment portfolio over a specific timeframe with a certain level of confidence (e.g., 95%).',
+                'tech': ['yfinance', 'pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
+                'github': 'https://github.com/Sameerchakare56/Portfolio_anaylsis_Value_AT_Risk',
             },
             {
                 'name': 'Car Price Prediction',
@@ -68,6 +68,11 @@ def index(request):
                 'degree': 'Higher Secondary (12th) – MP Board',
                 'school': 'Govt. Gyanoday Vidyalaya, Indore',
                 'year': '2022 – 2023',
+            },
+            {
+                'degree': 'Secondary (10th) – MP Board',
+                'school': 'Govt. Gyanoday Vidyalaya, Indore',
+                'year': '2020 – 2021',
             },
         ],
     }
