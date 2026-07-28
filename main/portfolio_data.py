@@ -39,12 +39,12 @@ PORTFOLIO_DATA = {
         {
             'category': 'Languages',
             'icon': '🐍',
-            'items': ['Python', 'SQL', 'MySQL', 'C/C++']
+            'items': ['Python', 'SQL', 'MySQL', 'C++']
         },
         {
             'category': 'ML & Deep Learning',
             'icon': '🧠',
-            'items': ['PyTorch', 'Scikit-learn', 'YOLOv8', 'OpenCV', 'Roboflow', 'Transformers']
+            'items': ['PyTorch', 'Scikit-learn', 'OpenCV', 'TensorFlow', 'NLP']
         },
         {
             'category': 'Data Analysis & Viz',
@@ -54,7 +54,7 @@ PORTFOLIO_DATA = {
         {
             'category': 'Web & Frameworks',
             'icon': '⚡',
-            'items': ['Django', 'FastAPI', 'Streamlit', 'HTML5', 'CSS3', 'JavaScript']
+            'items': ['Django', 'FastAPI', 'Streamlit', 'HTML', 'CSS']
         },
         {
             'category': 'Tools & Platforms',
@@ -78,7 +78,7 @@ PORTFOLIO_DATA = {
                 'Developed and tested FastAPI backends for real-time AI model integration.',
                 'Handled end-to-end AI workflows from dataset creation to live inference.',
             ],
-            'tech': ['Python', 'OpenCV', 'YOLOv8', 'Roboflow', 'FastAPI', 'PyTorch'],
+            'tech': ['Python', 'OpenCV', 'FastAPI', 'SQL'],
         }
     ],
 
