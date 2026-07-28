@@ -33,6 +33,7 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
         <li><a href="#contact" class="nav-cta">Contact Me</a></li>
       </ul>
 
@@ -301,6 +302,51 @@
         </div>
         {% endfor %}
       </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & ACHIEVEMENTS SECTION -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Honors &amp; Credentials</span>
+        <h2 class="section-title">Certifications &amp; Achievements</h2>
+      </div>
+
+      <!-- Certifications Grid -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        {% for cert in certifications %}
+        <div class="skill-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
+            <span style="font-size: 1.6rem;">{{ cert.icon|default:"📜" }}</span>
+            <span class="timeline-badge">{{ cert.year }}</span>
+          </div>
+          <h3 class="skill-card-title" style="font-size: 1.1rem; margin-bottom: 0.3rem;">{{ cert.title }}</h3>
+          <p style="color: var(--blue-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem;">Issued by {{ cert.issuer }}</p>
+          <p style="color: var(--slate-muted); font-size: 0.84rem; line-height: 1.6;">{{ cert.details }}</p>
+          {% if cert.link %}
+          <a href="{{ cert.link }}" target="_blank" class="btn-github-source" style="margin-top: 0.8rem; display: inline-flex;">
+            Verify Certificate ↗
+          </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Achievements Cards -->
+      {% if achievements %}
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        {% for ach in achievements %}
+        <div class="timeline-card" style="margin-bottom: 0; padding: 1.6rem;">
+          <div style="display: inline-flex; padding: 0.25rem 0.65rem; background: var(--blue-subtle); border-radius: 12px; font-size: 0.72rem; font-family: var(--font-mono); color: var(--blue-primary); font-weight: 700; margin-bottom: 0.8rem;">
+            {{ ach.badge }}
+          </div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-dark); margin-bottom: 0.4rem;">{{ ach.title }}</h4>
+          <p style="font-size: 0.85rem; color: var(--slate-muted); line-height: 1.5;">{{ ach.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </section>
 

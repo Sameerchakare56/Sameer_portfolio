@@ -185,4 +185,39 @@ PORTFOLIO_DATA = {
             'details': 'Foundational Science and Mathematics.',
         },
     ],
+
+    # -------------------------------------------------------------
+    # CERTIFICATIONS & ACHIEVEMENTS
+    # -------------------------------------------------------------
+    'certifications': [
+        {
+            'title': 'Human-Computer Interaction (HCI)',
+            'issuer': 'NPTEL (IIT Madras / IIIT Delhi)',
+            'year': 'Elite + Gold (94%)',
+            'icon': '🥇',
+            'details': 'Secured Elite + Gold Certification with 94% score in Human-Computer Interaction offered by IIT Madras & IIIT Delhi.',
+            'link': '',
+        },
+        {
+            'title': 'Generative AI, Deep Learning & LLMs',
+            'issuer': 'AICTE EduSkills',
+            'year': 'Certified',
+            'icon': '🧠',
+            'details': 'Professional certification in Generative AI architectures, Deep Learning models, and Large Language Models (LLMs).',
+            'link': '',
+        },
+    ],
+
+    'achievements': [
+        {
+            'title': 'Elite + Gold Standard (94%) in NPTEL HCI',
+            'desc': 'Awarded Elite + Gold badge by IIT Madras / IIIT Delhi for top performance (94% score) in Human-Computer Interaction.',
+            'badge': '🥇 Elite + Gold (94%)',
+        },
+        {
+            'title': 'AICTE EduSkills Certified in GenAI & LLMs',
+            'desc': 'Certified by AICTE EduSkills in Generative AI, Deep Learning architectures, and LLM implementations.',
+            'badge': '📜 AICTE Certified',
+        },
+    ],
 }
