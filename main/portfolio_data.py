@@ -72,7 +72,7 @@ PORTFOLIO_DATA = {
         {
             'role': 'Python Support Intern',
             'company': 'TDBAI',
-            'duration': 'Sep 2025 – Dec 2025',
+            'duration': '15 Sep 2025 –15  Dec 2025',
             'points': [
                 'Built computer vision and object detection projects using YOLOv8 models.',
                 'Trained custom AI models on datasets created and managed via Roboflow.',
