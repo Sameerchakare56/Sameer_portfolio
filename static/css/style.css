@@ -400,7 +400,8 @@ a {
 
 .social-button-group {
   display: flex;
-  gap: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .btn-social {

@@ -48,7 +48,7 @@
       <div class="hero-grid">
         <div class="hero-left">
           <div class="hero-badge">
-            <span class="badge-dot"></span> Available for Internships &amp; AI Projects
+            <span class="badge-dot"></span> Available for Connection &amp; and opportunities
           </div>
 
           <h1 class="hero-title">
@@ -117,6 +117,8 @@
             <div class="social-button-group">
               <a href="{{ github }}" target="_blank" class="btn-social">GitHub</a>
               <a href="{{ linkedin }}" target="_blank" class="btn-social">LinkedIn</a>
+              {% if kaggle %}<a href="{{ kaggle }}" target="_blank" class="btn-social">Kaggle</a>{% endif %}
+              {% if leetcode %}<a href="{{ leetcode }}" target="_blank" class="btn-social">LeetCode</a>{% endif %}
               <button class="btn-social" id="copy-email-btn" data-email="{{ email }}">Copy Email</button>
             </div>
           </div>
@@ -339,6 +341,26 @@
               </div>
               <span style="color: var(--blue-primary); font-weight: bold;">→</span>
             </a>
+
+            {% if kaggle %}
+            <a href="{{ kaggle }}" target="_blank" class="contact-link-row">
+              <div>
+                <div class="contact-link-label">Kaggle Profile</div>
+                <div class="contact-link-val">sameerchakravedi</div>
+              </div>
+              <span style="color: var(--blue-primary); font-weight: bold;">→</span>
+            </a>
+            {% endif %}
+
+            {% if leetcode %}
+            <a href="{{ leetcode }}" target="_blank" class="contact-link-row">
+              <div>
+                <div class="contact-link-label">LeetCode Profile</div>
+                <div class="contact-link-val">sameerchakravedi</div>
+              </div>
+              <span style="color: var(--blue-primary); font-weight: bold;">→</span>
+            </a>
+            {% endif %}
 
             <a href="tel:{{ phone }}" class="contact-link-row">
               <div>
