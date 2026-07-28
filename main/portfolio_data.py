@@ -208,16 +208,16 @@ PORTFOLIO_DATA = {
         },
     ],
 
-    'achievements': [
-        {
-            'title': 'Elite + Gold Standard (94%) in NPTEL HCI',
-            'desc': 'Awarded Elite + Gold badge by IIT Madras / IIIT Delhi for top performance (94% score) in Human-Computer Interaction.',
-            'badge': '🥇 Elite + Gold (94%)',
-        },
-        {
-            'title': 'AICTE EduSkills Certified in GenAI & LLMs',
-            'desc': 'Certified by AICTE EduSkills in Generative AI, Deep Learning architectures, and LLM implementations.',
-            'badge': '📜 AICTE Certified',
-        },
-    ],
+    # 'achievements': [
+    #     {
+    #         'title': 'Elite + Gold Standard (94%) in NPTEL HCI',
+    #         'desc': 'Awarded Elite + Gold badge by IIT Madras / IIIT Delhi for top performance (94% score) in Human-Computer Interaction.',
+    #         'badge': '🥇 Elite + Gold (94%)',
+    #     },
+    #     {
+    #         'title': 'AICTE EduSkills Certified in GenAI & LLMs',
+    #         'desc': 'Certified by AICTE EduSkills in Generative AI, Deep Learning architectures, and LLM implementations.',
+    #         'badge': '📜 AICTE Certified',
+    #     },
+    # ],
 }
