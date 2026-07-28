@@ -1,0 +1,186 @@
+"""
+===================================================================
+                  PORTFOLIO DATA CONFIGURATION
+===================================================================
+Welcome Sameer! You can easily modify, add, or remove your portfolio 
+information right here in this file. 
+
+To ADD A NEW PROJECT:
+  Simply add a new dictionary block inside the 'projects' list below.
+  Required keys: 'name', 'category', 'desc', 'tech', 'github', 'live', 'is_live'
+
+To EDIT YOUR PROFILE, SKILLS, EXPERIENCE, OR EDUCATION:
+  Just change the corresponding text or list items below!
+===================================================================
+"""
+
+PORTFOLIO_DATA = {
+    # -------------------------------------------------------------
+    # PERSONAL INFORMATION
+    # -------------------------------------------------------------
+    'name': 'Sameer Chakravedi',
+    'title': 'AI & ML Developer',
+    'email': 'sameerchakravedi75@gmail.com',
+    'phone': '+91 9098702377',
+    'location': 'Indore, Madhya Pradesh, India',
+    'github': 'https://github.com/Sameerchakare56',
+    'linkedin': 'https://www.linkedin.com/in/sameerchakravedi/',
+    
+    'about': (
+        'Aspiring AI professional with hands-on experience in computer vision, machine learning, '
+        'natural language processing, and full-stack AI solutions. I specialize in building end-to-end '
+        'AI systems — from dataset curation and model training to interactive web dashboards and production deployment.'
+    ),
+    
+    # -------------------------------------------------------------
+    # TECHNICAL SKILLS
+    # -------------------------------------------------------------
+    'skills': [
+        {
+            'category': 'Languages',
+            'icon': '🐍',
+            'items': ['Python', 'SQL', 'MySQL', 'C/C++']
+        },
+        {
+            'category': 'ML & Deep Learning',
+            'icon': '🧠',
+            'items': ['PyTorch', 'Scikit-learn', 'YOLOv8', 'OpenCV', 'Roboflow', 'Transformers']
+        },
+        {
+            'category': 'Data Analysis & Viz',
+            'icon': '📊',
+            'items': ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly']
+        },
+        {
+            'category': 'Web & Frameworks',
+            'icon': '⚡',
+            'items': ['Django', 'FastAPI', 'Streamlit', 'HTML5', 'CSS3', 'JavaScript']
+        },
+        {
+            'category': 'Tools & Platforms',
+            'icon': '🛠️',
+            'items': ['Git', 'GitHub', 'Render', 'Jupyter', 'VS Code']
+        },
+    ],
+
+    # -------------------------------------------------------------
+    # WORK EXPERIENCE
+    # -------------------------------------------------------------
+    'experience': [
+        {
+            'role': 'Python Support Intern',
+            'company': 'TDBAI',
+            'duration': 'Sep 2025 – Dec 2025',
+            'points': [
+                'Built computer vision and object detection projects using YOLOv8 models.',
+                'Trained custom AI models on datasets created and managed via Roboflow.',
+                'Performed data annotation, preprocessing, hyperparameter training, and model evaluation.',
+                'Developed and tested FastAPI backends for real-time AI model integration.',
+                'Handled end-to-end AI workflows from dataset creation to live inference.',
+            ],
+            'tech': ['Python', 'OpenCV', 'YOLOv8', 'Roboflow', 'FastAPI', 'PyTorch'],
+        }
+    ],
+
+    # -------------------------------------------------------------
+    # PROJECTS (Featured & Live Projects at the top!)
+    # -------------------------------------------------------------
+    'projects': [
+        {
+            'id': 'aura-nlp',
+            'name': 'AURA-NLP | Multi-Emotion & Toxicity Engine',
+            'category': 'NLP & Deep Learning',
+            'filter_cat': 'nlp',
+            'desc': 'Multi-Emotion & Toxicity Intelligence Engine featuring real-time text analysis, token attribution, neural self-attention heatmaps, and a 6-emotion spectrum radar.',
+            'tech': ['Python', 'NLP', 'PyTorch', 'Transformers', 'FastAPI', 'Render'],
+            'github': 'https://github.com/Sameerchakare56',
+            'live': 'https://aura-nlp.onrender.com/',
+            'is_live': True,
+            'featured': True,
+        },
+        {
+            'id': 'south-asia-dashboard',
+            'name': 'South Asia Data & Insights Dashboard',
+            'category': 'Data Science & Dashboards',
+            'filter_cat': 'dashboards',
+            'desc': 'Interactive data dashboard analyzing socio-economic, environmental, and demographic metrics across South Asian countries with real-time charts and visualizations.',
+            'tech': ['Python', 'Streamlit', 'Pandas', 'Plotly', 'Data Analysis'],
+            'github': 'https://github.com/Sameerchakare56',
+            'live': 'https://south-asia-dashboard-ekvi6vcywcgpaykmpkwkr5.streamlit.app/',
+            'is_live': True,
+            'featured': True,
+        },
+        {
+            'id': 'movie-rec',
+            'name': 'Movie Recommendation Website',
+            'category': 'Machine Learning',
+            'filter_cat': 'ml',
+            'desc': 'A content-based movie recommendation system using cosine similarity that suggests films based on user behavior and preferences.',
+            'tech': ['Python', 'Scikit-learn', 'Django', 'Pandas'],
+            'github': 'https://github.com/Sameerchakare56/movie_recommendation_website',
+            'live': '',
+            'is_live': False,
+            'featured': False,
+        },
+        {
+            'id': 'portfolio-var',
+            'name': 'Portfolio Analysis: Value at Risk',
+            'category': 'Financial Analytics',
+            'filter_cat': 'ml',
+            'desc': 'Financial Risk Management tool that calculates Value at Risk (VaR) to estimate potential investment portfolio loss over specific timeframes with 95% confidence.',
+            'tech': ['yfinance', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
+            'github': 'https://github.com/Sameerchakare56/Portfolio_anaylsis_Value_AT_Risk',
+            'live': '',
+            'is_live': False,
+            'featured': False,
+        },
+        {
+            'id': 'car-price',
+            'name': 'Car Price Prediction Model',
+            'category': 'Machine Learning',
+            'filter_cat': 'ml',
+            'desc': 'Machine learning model predicting used car prices based on features like brand, year, fuel type, and mileage.',
+            'tech': ['Python', 'Scikit-learn', 'Pandas', 'Jupyter'],
+            'github': 'https://github.com/Sameerchakare56/Codealpha_carprice_predictio',
+            'live': '',
+            'is_live': False,
+            'featured': False,
+        },
+        {
+            'id': 'iris-classification',
+            'name': 'Iris Flower Classification',
+            'category': 'Machine Learning',
+            'filter_cat': 'ml',
+            'desc': 'Classic ML classification project predicting iris flower species using multiple classification algorithms and visualization.',
+            'tech': ['Python', 'Scikit-learn', 'Matplotlib'],
+            'github': 'https://github.com/Sameerchakare56/Codealpha_Iris_flower_classification',
+            'live': '',
+            'is_live': False,
+            'featured': False,
+        },
+    ],
+
+    # -------------------------------------------------------------
+    # EDUCATION
+    # -------------------------------------------------------------
+    'education': [
+        {
+            'degree': 'B.Tech in Artificial Intelligence',
+            'school': 'SAGE University, Indore',
+            'year': '2023 – 2027',
+            'details': 'Specialization in Machine Learning, Deep Learning, Computer Vision, and Data Structures.',
+        },
+        {
+            'degree': 'Higher Secondary (12th) – MP Board',
+            'school': 'Govt. Gyanoday Vidyalaya, Indore',
+            'year': '2022 – 2023',
+            'details': 'Focus on Physics, Chemistry, and Mathematics.',
+        },
+        {
+            'degree': 'Secondary (10th) – MP Board',
+            'school': 'Govt. Gyanoday Vidyalaya, Indore',
+            'year': '2020 – 2021',
+            'details': 'Foundational Science and Mathematics.',
+        },
+    ],
+}

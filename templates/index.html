@@ -4,363 +4,366 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ name }} — AI Developer</title>
+  <title>{{ name }} — AI &amp; Machine Learning Developer</title>
+  <meta name="description" content="Portfolio of {{ name }} — AI & ML Developer specializing in Computer Vision, Natural Language Processing, Machine Learning, and Full-Stack AI Web Applications." />
+
+  <!-- Google Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.0" />
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
+  <!-- Background Grid Pattern -->
+  <div class="bg-grid-pattern"></div>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-brand">SC - PORTFOLIO<span>.</span></div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#resume">Resume</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        SC<span class="logo-dot"></span>
+      </a>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-left">
-    <div class="hero-year">{{ name }} · Portfolio</div>
-    <div class="hero-name-block">
-      <span class="hero-first">Sameer</span>
-      <span class="hero-last">Chakravedi</span>
-      <div class="hero-divider"></div>
-      <p class="hero-tagline">Building intelligent systems — from dataset to deployment. Computer vision, machine learning, and AI backends.</p>
-    </div>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="{{ github }}" target="_blank" class="btn btn-outline">GitHub ↗</a>
-      <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" download="Sameer_Chakravedi_Resume.pdf" class="btn btn-resume">↓ Resume</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="hero-issue">Indore, Madhya Pradesh · B.Tech AI · 2023–2027</div>
-    <div class="hero-role-block">
-      <div class="hero-role-label">Specialised in</div>
-      <ul class="hero-roles">
-        <li>Computer Vision</li>
-        <li>Machine Learning</li>
-      
-        <li>Data Analysis</li>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Me</a></li>
       </ul>
-    </div>
-    <div class="hero-stat-row">
-      <div class="hero-stat">
-        <span class="hero-stat-num">16+</span>
-        <span class="hero-stat-label">GitHub Repos</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">5+</span>
-        <span class="hero-stat-label">Projects Built</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">4mo</span>
-        <span class="hero-stat-label">Experience</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">01</div>
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">About Me</span>
-        <h2 class="section-title">The person<br/>behind the code.</h2>
-      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="about-layout">
-      <div class="about-left reveal">
-        <p>{{ about }}</p>
-        <div class="about-pullquote">"Learn by building. Build to learn."</div>
-        <p>Currently exploring Generative AI, fine-tuning LLMs, and MLOps pipelines. Open to internships, collaborations, and interesting problems.</p>
-      </div>
-      <div class="about-divider"></div>
-      <div class="about-right reveal">
-        <div class="about-card">
-          <div class="card-label">Identity Card</div>
-          <div class="card-avatar-box">SC</div>
-          <div class="card-name">{{ name }}</div>
-          <span class="card-role-tag">AI Developer</span>
-          <div class="card-location">📍 {{ location }}</div>
-          <div class="card-links">
-            <a href="mailto:{{ email }}" class="card-link">{{ email }}</a>
-            <a href="{{ linkedin }}" target="_blank" class="card-link">LinkedIn Profile</a>
-            <a href="{{ github }}" target="_blank" class="card-link">GitHub Profile</a>
-            <a href="tel:{{ phone }}" class="card-link">{{ phone }}</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="badge-dot"></span> Available for Internships &amp; AI Projects
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="hero-title-accent">{{ name }}</span><br/>
+            <span class="typewriter-text" id="typewriter"></span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Building intelligent AI systems — from computer vision models to production web applications and interactive analytics dashboards.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              View Live Projects 🚀
+            </a>
+            <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" download="Sameer_Chakravedi_Resume.pdf" class="btn btn-secondary">
+              Download Resume ↓
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="stat-number">2<span>+</span></div>
+              <div class="stat-label">Live Web Apps</div>
+            </div>
+            <div>
+              <div class="stat-number">6<span>+</span></div>
+              <div class="stat-label">AI Repositories</div>
+            </div>
+            <div>
+              <div class="stat-number">4<span>mo</span></div>
+              <div class="stat-label">Python Intern</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="profile-card">
+            <div class="profile-avatar-row">
+              <div class="avatar-box">SC</div>
+              <div class="profile-name-box">
+                <h3>{{ name }}</h3>
+                <p>AI &amp; ML Developer</p>
+              </div>
+            </div>
+
+            <div class="profile-list">
+              <div class="profile-list-item">
+                <span class="profile-icon">🎓</span>
+                <span>B.Tech Artificial Intelligence (2023–2027)</span>
+              </div>
+              <div class="profile-list-item">
+                <span class="profile-icon">📍</span>
+                <span>{{ location }}</span>
+              </div>
+              <div class="profile-list-item">
+                <span class="profile-icon">✉️</span>
+                <span>{{ email }}</span>
+              </div>
+              <div class="profile-list-item">
+                <span class="profile-icon">⚡</span>
+                <span>Core: PyTorch, YOLOv8, Django, FastAPI</span>
+              </div>
+            </div>
+
+            <div class="social-button-group">
+              <a href="{{ github }}" target="_blank" class="btn-social">GitHub</a>
+              <a href="{{ linkedin }}" target="_blank" class="btn-social">LinkedIn</a>
+              <button class="btn-social" id="copy-email-btn" data-email="{{ email }}">Copy Email</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS -->
-<section class="section section-dark" id="skills">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num" style="color:#e8350a;opacity:0.35;">02</div>
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Technical Skills</span>
-        <h2 class="section-title">Tools of the<br/><em style="font-style:italic;color:#e8350a;">trade.</em></h2>
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">About Me</span>
+        <h2 class="section-title">Building AI from Dataset to Deployment</h2>
       </div>
-    </div>
-    <div class="skills-layout reveal">
-      {% for skill_group in skills %}
-      <div class="skill-block">
-        <div class="skill-block-num">0{{ forloop.counter }}</div>
-        <div class="skill-block-cat">{{ skill_group.category }}</div>
-        <ul class="skill-list">
-          {% for item in skill_group.items %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
-<!-- EXPERIENCE -->
-<section class="section section-alt" id="experience">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">03</div>
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Work Experience</span>
-        <h2 class="section-title">Where I've<br/>shipped real work.</h2>
-      </div>
-    </div>
-    <div class="exp-layout">
-      {% for exp in experience %}
-      <div class="exp-card reveal">
-        <div class="exp-meta">
-          <span class="exp-duration">{{ exp.duration }}</span>
-          <div class="exp-company">{{ exp.company }}</div>
-          <div class="exp-type">Internship</div>
+      <div class="profile-card" style="padding: 2.2rem;">
+        <p style="font-size: 1.05rem; color: var(--slate-body); line-height: 1.8; margin-bottom: 1.5rem;">
+          {{ about }}
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-light); padding: 0.8rem 1.2rem; border-radius: 10px;">
+            <strong style="color: var(--blue-primary); display: block; font-family: var(--font-mono); font-size: 0.78rem; margin-bottom: 0.2rem;">SPECIALIZATION</strong>
+            <span style="font-size: 0.92rem; font-weight: 500;">Computer Vision, NLP &amp; Deep Learning</span>
+          </div>
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-light); padding: 0.8rem 1.2rem; border-radius: 10px;">
+            <strong style="color: var(--emerald); display: block; font-family: var(--font-mono); font-size: 0.78rem; margin-bottom: 0.2rem;">STACK</strong>
+            <span style="font-size: 0.92rem; font-weight: 500;">PyTorch, YOLOv8, Django, FastAPI &amp; Streamlit</span>
+          </div>
         </div>
-        <div class="exp-body">
-          <div class="exp-role">{{ exp.role }}</div>
-          <ul class="exp-points">
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Technical Skills</span>
+        <h2 class="section-title">Languages &amp; Technologies</h2>
+      </div>
+
+      <div class="skills-grid">
+        {% for skill_group in skills %}
+        <div class="skill-card">
+          <div class="skill-card-icon">{{ skill_group.icon|default:"🛠️" }}</div>
+          <h3 class="skill-card-title">{{ skill_group.category }}</h3>
+          <div class="skill-tags-group">
+            {% for item in skill_group.items %}
+            <span class="skill-pill">{{ item }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Work Experience</span>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
+
+      <div>
+        {% for exp in experience %}
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div>
+              <h3 class="timeline-role-title">{{ exp.role }}</h3>
+              <div class="timeline-org">@ {{ exp.company }}</div>
+            </div>
+            <div class="timeline-badge">{{ exp.duration }}</div>
+          </div>
+
+          <ul class="timeline-bullets">
             {% for point in exp.points %}
             <li>{{ point }}</li>
             {% endfor %}
           </ul>
-          <div class="exp-tech">
+
+          <div class="project-tech-stack">
             {% for t in exp.tech %}
-            <span class="tech-pill">{{ t }}</span>
+            <span class="tech-tag">{{ t }}</span>
             {% endfor %}
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">04</div>
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Projects</span>
-        <h2 class="section-title">Things I've<br/>actually built.</h2>
+  <!-- PROJECTS SECTION WITH INTERACTIVE FILTERS & SEARCH -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Featured Work</span>
+        <h2 class="section-title">Projects &amp; Live Web Applications</h2>
       </div>
-    </div>
-    <div class="projects-layout">
-      {% for project in projects %}
-      <div class="project-card reveal">
-        <div class="project-index">{{ forloop.counter }}</div>
-        <div class="project-cat">Python · AI / ML</div>
-        <h3 class="project-name">{{ project.name }}</h3>
-        <p class="project-desc">{{ project.desc }}</p>
-        <div class="project-tech">
-          {% for t in project.tech %}
-          <span class="tech-pill">{{ t }}</span>
-          {% endfor %}
+
+      <!-- Filter Bar & Search Input -->
+      <div class="projects-toolbar">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">All Projects</button>
+          <button class="filter-pill" data-filter="live">🚀 Live Demos</button>
+          <button class="filter-pill" data-filter="nlp">🧠 NLP &amp; Deep Learning</button>
+          <button class="filter-pill" data-filter="dashboards">📊 Dashboards</button>
+          <button class="filter-pill" data-filter="ml">⚡ Machine Learning</button>
         </div>
-        <a href="{{ project.github }}" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
-<!-- EDUCATION -->
-<section class="section section-alt" id="education">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">05</div>
-      <div class="section-title-wrap">
+        <div class="search-field-wrap">
+          <span class="search-field-icon">🔍</span>
+          <input type="text" id="project-search" class="search-field" placeholder="Search tech or keyword..." />
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        {% for project in projects %}
+        <div class="project-card {% if project.is_live %}is-live{% endif %}"
+             data-category="{{ project.filter_cat|default:'ml' }}"
+             data-is-live="{% if project.is_live %}true{% else %}false{% endif %}"
+             data-keywords="{{ project.name|lower }} {{ project.desc|lower }} {{ project.tech|join:' '|lower }}">
+          
+          <div class="project-meta">
+            <span class="project-category-tag">{{ project.category|default:"Machine Learning" }}</span>
+            {% if project.is_live %}
+            <span class="live-badge">
+              <span class="live-badge-dot"></span> LIVE DEMO
+            </span>
+            {% endif %}
+          </div>
+
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-description">{{ project.desc }}</p>
+
+          <div class="project-tech-stack">
+            {% for t in project.tech %}
+            <span class="tech-tag">{{ t }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="project-card-footer">
+            {% if project.live %}
+            <a href="{{ project.live }}" target="_blank" class="btn-live-launch">
+              Launch Live App 🚀
+            </a>
+            {% endif %}
+            {% if project.github %}
+            <a href="{{ project.github }}" target="_blank" class="btn-github-source">
+              View Code ↗
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-header">
         <span class="section-eyebrow">Education</span>
-        <h2 class="section-title">The foundation<br/>of everything.</h2>
+        <h2 class="section-title">Academic Qualifications</h2>
+      </div>
+
+      <div class="skills-grid">
+        {% for edu in education %}
+        <div class="skill-card">
+          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--blue-primary); margin-bottom: 0.4rem; font-weight: 600;">{{ edu.year }}</div>
+          <h3 class="skill-card-title" style="font-size: 1.1rem; margin-bottom: 0.3rem;">{{ edu.degree }}</h3>
+          <p style="color: var(--slate-muted); font-size: 0.88rem; margin-bottom: 0.6rem;">{{ edu.school }}</p>
+          {% if edu.details %}
+          <p style="color: var(--slate-subtle); font-size: 0.82rem; line-height: 1.5;">{{ edu.details }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
       </div>
     </div>
-    <div class="edu-layout">
-      {% for edu in education %}
-      <div class="edu-card reveal">
-        <div class="edu-card-num">0{{ forloop.counter }}</div>
-        <div class="edu-year-badge">{{ edu.year }}</div>
-        <div class="edu-degree">{{ edu.degree }}</div>
-        <div class="edu-school">{{ edu.school }}</div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- RESUME SECTION -->
-<section class="section resume-section" id="resume">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">06</div>
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Resume</span>
-        <h2 class="section-title">My full<br/>credentials.</h2>
-      </div>
-    </div>
-
-    <div class="resume-layout reveal">
-      <div class="resume-highlights">
-        <div class="resume-highlight-item">
-          <div class="rh-icon">🎓</div>
-          <div>
-            <div class="rh-label">Education</div>
-            <div class="rh-value">B.Tech in Artificial Intelligence<br/><span>SAGE University · 2023–2027</span></div>
-          </div>
-        </div>
-        <div class="resume-highlight-item">
-          <div class="rh-icon">💼</div>
-          <div>
-            <div class="rh-label">Experience</div>
-            <div class="rh-value">Python Support Intern<br/><span>TDBAI · Sep–Dec 2025</span></div>
-          </div>
-        </div>
-        <div class="resume-highlight-item">
-          <div class="rh-icon">🛠️</div>
-          <div>
-            <div class="rh-label">Core Stack</div>
-            <div class="rh-value">Python · YOLOv8 · FastAPI<br/><span>OpenCV · Scikit-learn · Django</span></div>
-          </div>
-        </div>
-        <div class="resume-highlight-item">
-          <div class="rh-icon">📍</div>
-          <div>
-            <div class="rh-label">Location</div>
-            <div class="rh-value">Indore, Madhya Pradesh<br/><span>Open to remote &amp; relocation</span></div>
-          </div>
+  <!-- CONTACT SECTION -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div>
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2 class="contact-card-title" style="font-size: 2.2rem;">Let's Work Together.</h2>
+          <p class="contact-card-text">
+            I am always interested in discussing internships, open-source projects, or AI engineering opportunities. Feel free to connect!
+          </p>
         </div>
 
-        <div class="resume-cta-group">
-          <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" download="Sameer_Chakravedi_Resume.pdf" class="resume-btn resume-btn-download">
-            <span class="resume-btn-icon">↓</span>
-            Download PDF
-          </a>
-          <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" target="_blank" class="resume-btn resume-btn-view">
-            <span class="resume-btn-icon">↗</span>
-            View in Browser
-          </a>
-        </div>
-      </div>
+        <div class="contact-card">
+          <div>
+            <a href="mailto:{{ email }}" class="contact-link-row">
+              <div>
+                <div class="contact-link-label">Email</div>
+                <div class="contact-link-val">{{ email }}</div>
+              </div>
+              <span style="color: var(--blue-primary); font-weight: bold;">→</span>
+            </a>
 
-      <div class="resume-preview-wrap">
-        <div class="resume-preview-label">
-          <span class="rp-dot"></span> Live Preview
-        </div>
-        <div class="resume-embed-box">
-          <iframe
-            src="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}#toolbar=0&navpanes=0&scrollbar=0"
-            class="resume-iframe"
-            title="Sameer Chakravedi Resume">
-          </iframe>
-          <div class="resume-embed-overlay">
-            <a href="{% static 'SAMEER_CHAKRAVEDI_Resume.pdf' %}" target="_blank" class="resume-open-link">
-              Open Full Screen ↗
+            <a href="{{ linkedin }}" target="_blank" class="contact-link-row">
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-val">sameerchakravedi</div>
+              </div>
+              <span style="color: var(--blue-primary); font-weight: bold;">→</span>
+            </a>
+
+            <a href="{{ github }}" target="_blank" class="contact-link-row">
+              <div>
+                <div class="contact-link-label">GitHub</div>
+                <div class="contact-link-val">Sameerchakare56</div>
+              </div>
+              <span style="color: var(--blue-primary); font-weight: bold;">→</span>
+            </a>
+
+            <a href="tel:{{ phone }}" class="contact-link-row">
+              <div>
+                <div class="contact-link-label">Phone</div>
+                <div class="contact-link-val">{{ phone }}</div>
+              </div>
+              <span style="color: var(--blue-primary); font-weight: bold;">→</span>
             </a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="section section-dark" id="contact">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num" style="color:#e8350a;opacity:0.35;">07</div>
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Contact</span>
-        <h2 class="section-title" style="color:#f5f0e8;">Let's work<br/>together.</h2>
-      </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 {{ name }} · AI &amp; Machine Learning Developer · Built with Django</p>
     </div>
-    <div class="contact-layout">
-      <div class="reveal">
-        <div class="contact-headline">Open to<br/>new ideas.</div>
-        <p class="contact-subtext">I'm always up for a good challenge — internships, open-source collabs, or building something cool from scratch. Reach out.</p>
-      </div>
-      <div class="contact-links reveal">
-        <a href="mailto:{{ email }}" class="contact-item">
-          <div>
-            <div class="contact-item-label">Email</div>
-            <div class="contact-item-value">{{ email }}</div>
-          </div>
-          <span class="contact-arrow">→</span>
-        </a>
-        <a href="{{ linkedin }}" target="_blank" class="contact-item">
-          <div>
-            <div class="contact-item-label">LinkedIn</div>
-            <div class="contact-item-value">sameerchakravedi</div>
-          </div>
-          <span class="contact-arrow">→</span>
-        </a>
-        <a href="{{ github }}" target="_blank" class="contact-item">
-          <div>
-            <div class="contact-item-label">GitHub</div>
-            <div class="contact-item-value">Sameerchakare56</div>
-          </div>
-          <span class="contact-arrow">→</span>
-        </a>
-        <a href="tel:{{ phone }}" class="contact-item">
-          <div>
-            <div class="contact-item-label">Phone</div>
-            <div class="contact-item-value">{{ phone }}</div>
-          </div>
-          <span class="contact-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">SC<span>.</span></div>
-    <div class="footer-copy">© 2025 Sameer Chakravedi · All rights reserved</div>
-    <div class="footer-top"><a href="#hero">↑ Back to top</a></div>
-  </div>
-</footer>
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied email to clipboard! 📋</div>
 
-<script src="{% static 'js/main.js' %}"></script>
+  <!-- JavaScript -->
+  <script src="{% static 'js/main.js' %}?v=2.0"></script>
 </body>
 </html>

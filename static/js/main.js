@@ -1,55 +1,151 @@
-// Custom cursor
-const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
+/* ===================================================================
+   VERCEL / APPLE-STYLE CLEAN & MINIMALIST LIGHT PORTFOLIO SCRIPT
+   Developer: Sameer Chakravedi — AI & ML Developer
+   =================================================================== */
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Navigation Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('open'));
+    });
+  }
 
-function animateRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  cursorRing.style.left = rx + 'px';
-  cursorRing.style.top = ry + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
+  // Hero Typewriter Headline Effect
+  const typewriterElement = document.getElementById('typewriter');
+  if (typewriterElement) {
+    const roles = [
+      'AI & ML Developer',
+      'Computer Vision Engineer',
+      'NLP & Deep Learning Specialist',
+      'Full-Stack AI Solutions Builder'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 90;
 
-// Hamburger
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
 
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), 80);
-      observer.unobserve(entry.target);
+      if (isDeleting) {
+        typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 40;
+      } else {
+        typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 90;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typingSpeed = 1600;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 400;
+      }
+
+      setTimeout(typeEffect, typingSpeed);
     }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-revealEls.forEach(el => observer.observe(el));
+    typeEffect();
+  }
 
-// Active nav
-const sections = document.querySelectorAll('section[id]');
-const navAs = document.querySelectorAll('.nav-links a[href^="#"]');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
-  navAs.forEach(a => {
-    a.style.color = '';
-    if (a.getAttribute('href') === '#' + cur) a.style.color = '#e8350a';
-  });
-});
+  // Interactive Project Filter Pills & Search Input
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const projectCards = document.querySelectorAll('.project-card');
+  const searchInput = document.getElementById('project-search');
 
-// Nav bg on scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.1)' : '';
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  function filterProjects() {
+    projectCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      const isLive = card.getAttribute('data-is-live') === 'true';
+      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+
+      let matchesFilter = false;
+      if (activeFilter === 'all') {
+        matchesFilter = true;
+      } else if (activeFilter === 'live') {
+        matchesFilter = isLive;
+      } else if (cardCategory === activeFilter) {
+        matchesFilter = true;
+      }
+
+      let matchesSearch = true;
+      if (searchQuery.trim() !== '') {
+        matchesSearch = keywords.includes(searchQuery.toLowerCase().trim());
+      }
+
+      if (matchesFilter && matchesSearch) {
+        card.style.display = 'flex';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 200);
+      }
+    });
+  }
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeFilter = pill.getAttribute('data-filter');
+      filterProjects();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      filterProjects();
+    });
+  }
+
+  // Copy Email Toast Notification
+  const copyBtn = document.getElementById('copy-email-btn');
+  const toast = document.getElementById('toast');
+  if (copyBtn && toast) {
+    copyBtn.addEventListener('click', () => {
+      const email = copyBtn.getAttribute('data-email');
+      navigator.clipboard.writeText(email).then(() => {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+      });
+    });
+  }
+
+  // Active Navbar Scroll Highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) {
+        current = sec.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
 });
