@@ -26,7 +26,7 @@ PORTFOLIO_DATA = {
     'github': 'https://github.com/Sameerchakare56',
     'linkedin': 'https://www.linkedin.com/in/sameerchakravedi/',
     'kaggle': 'https://www.kaggle.com/sameerchakravedi',
-    'leetcode': 'https://leetcode.com/u/sameerchakravedi/',
+    'leetcode': 'https://leetcode.com/u/SameerChakravedi/',
     
     'about': (
         'Aspiring AI professional with hands-on experience in computer vision, machine learning, '
